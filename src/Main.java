@@ -9,6 +9,17 @@ public class Main {
         //Thread.sleep(2000L);
         SimpleThread st2 = new SimpleThread("report 2");
 
+        Runnable st3 = ()->{
+            for (int i = 0; i<=100; i++) {
+                System.out.println("!!!!");
+                try {
+                    Thread.sleep(1000L);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+        (new Thread(st3)).start();
 
 
         for (int i = 1; i <= 5; i++) {
