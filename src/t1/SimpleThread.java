@@ -1,3 +1,5 @@
+package t1;
+
 public class SimpleThread implements Runnable{
 
     private final String str;
