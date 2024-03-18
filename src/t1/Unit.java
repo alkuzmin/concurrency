@@ -5,15 +5,15 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 
-public class Unit  implements  Playable{
+public class Unit implements Playable {
 
-    public  Object getProxy()
-    {
+    public Object getProxy() {
         Class cls = this.getClass();
-        return  Proxy.newProxyInstance(cls.getClassLoader(),
+        return Proxy.newProxyInstance(cls.getClassLoader(),
                 new Class[]{Playable.class, Healable.class},
                 new PlayableInvHadler(this));
     }
+
     private String name;
     private Float health;
 
@@ -27,8 +27,13 @@ public class Unit  implements  Playable{
         this.setName(name);
         this.setHealth(health);
     }
+
     @Sensitive
-    @JustForFun  @JustForFun  @JustForFun  @JustForFun  @JustForFun
+    @JustForFun
+    @JustForFun
+    @JustForFun
+    @JustForFun
+    @JustForFun
     public void doVoice() {
         System.out.println("Unit " + getName() + " " + getHealth());
     }
@@ -39,12 +44,14 @@ public class Unit  implements  Playable{
         return new String("Unit " + getName() + " " + getHealth());
     }
 
+    @Cashe
     public String getName() {
         return name;
     }
 
 
     @Protocolable(severity = 9)
+    @Mutator
     public void setName(String name) {
         this.name = name;
     }

@@ -8,24 +8,55 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-public class PlayableInvHadler implements InvocationHandler
-{
+public class PlayableInvHadler implements InvocationHandler {
     private Object obj;
-    PlayableInvHadler(Object obj){this.obj = obj;}
+
+    PlayableInvHadler(Object obj) {
+        this.obj = obj;
+    }
+
+    private Object cashedVal;
+    private Integer modCount=1;
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //System.out.println("It works");
         Method m = obj.getClass().getMethod(method.getName(), method.getParameterTypes());
+        boolean hasMutatorAnn = false;
+        boolean hasCasheAnn = false;
 
-        //Annotation[] anns = m.getDeclaredAnnotations();
-        Annotation[] anns = m.getAnnotationsByType(JustForFun.class);
-        for (Annotation a: anns)
+        for (Annotation a: m.getAnnotations())
         {
-             System.out.println("Ha ha ha ha ha ha ha ha ha");
+            if (a.annotationType().equals(Mutator.class)){
+                hasMutatorAnn = true;
+            };
+            if (a.annotationType().equals(Cashe.class)){
+                hasCasheAnn = true;
+            };
         }
-//        if (Arrays.stream(anns).filter(x->((Annotation)x).annotationType().equals(JustForFun.class)).count()>0)
-//        System.out.println("Ha ha ha ha ha ha ha ha ha");
+
+        if (hasMutatorAnn) {
+
+            modCount++;
+            //cashedVal = method.invoke(obj, args);
+            System.out.println("Not cashed val from mutator ");
+            return method.invoke(obj, args);
+
+        }
+
+        if (hasCasheAnn) {
+            if (modCount > 0) {
+                System.out.println("Not cashed val: ");
+                cashedVal = method.invoke(obj, args);
+                modCount=0;
+                return cashedVal;
+            } else {
+                //modCount=0;
+                System.out.println("Cashed val: ");
+                return cashedVal;
+            }
+
+        }
 
 
         return method.invoke(obj, args);
