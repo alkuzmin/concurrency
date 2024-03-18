@@ -16,17 +16,23 @@ public class PlayableInvHadler implements InvocationHandler {
         this.obj = obj;
         cashes = new HashMap<>();
         modCounts = new HashMap<>();
+        terminators = new HashMap<>();
     }
 
     private Object cashedVal;
     private Integer modCount=1;
     private HashMap<String, Object> cashes;
     private HashMap<String, Integer> modCounts;
+
     private class Result
     {
         Object value;
         Integer modCount;
     }
+
+    private HashMap<String,Runnable> terminators;
+
+
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
@@ -54,10 +60,25 @@ public class PlayableInvHadler implements InvocationHandler {
         }
 
         if (hasCasheAnn) {
+
+            Integer time = m.getAnnotation(Cashe.class).time();
             if (!modCounts.containsKey(m.getName()) || modCounts.get(m.getName()) > 0) {
                 System.out.println("Not cashed val: ");
                 cashedVal = method.invoke(obj, args);
                 cashes.put(m.getName(),cashedVal);
+
+
+                Thread t  = new Thread(()->{
+                    System.out.println("timer is running");
+                    Thread.sleep(time);
+                    modCounts.put(m.getName(), modCounts.get((m.getName())+1));
+
+                });
+                terminators.put(m.getName(), t);
+                t.start();
+
+
+
                 //modCount=0;
                 modCounts.put(m.getName(), 0);
                 return cashedVal;
