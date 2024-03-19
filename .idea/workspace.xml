@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5415af7-f690-4e75-9e24-b712ab7aa89c" name="Changes" comment="Simple casher">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/projectlombok_lombok.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/lombok-1.18.30.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/t1/PlayableInvHadler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/t1/PlayableInvHadler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrency.iml" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/t1/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/t1/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -39,12 +45,20 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "variant-2",
     "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/kuz_a/IdeaProjects/concurrency/src/Main.java"
+    "onboarding.tips.debug.path": "C:/Users/kuz_a/IdeaProjects/concurrency/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="SharedIndexes">
