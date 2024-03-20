@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5415af7-f690-4e75-9e24-b712ab7aa89c" name="Changes" comment="Simple casher">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/projectlombok_lombok.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lombok-1.18.30.jar" afterDir="false" />
+    <list default="true" id="c5415af7-f690-4e75-9e24-b712ab7aa89c" name="Changes" comment="Multi Casher ... (not finished)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concurrency.iml" beforeDir="false" afterPath="$PROJECT_DIR$/concurrency.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/t1/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/t1/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710732839896</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Multi Casher ... (not finished)">
+      <option name="closed" value="true" />
+      <created>1710871541711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710871541711</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +133,7 @@
     <MESSAGE value="Simple Threads with lambda" />
     <MESSAGE value="Added classes from prev" />
     <MESSAGE value="Simple casher" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simple casher" />
+    <MESSAGE value="Multi Casher ... (not finished)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multi Casher ... (not finished)" />
   </component>
 </project>
