@@ -3,16 +3,16 @@ package t1;
 import java.lang.reflect.Proxy;
 
 
-
-
-public class Unit implements Playable {
+public class Unit implements Playable, Temp {
 
     public Object getProxy() {
         Class cls = this.getClass();
         return Proxy.newProxyInstance(cls.getClassLoader(),
-                new Class[]{Playable.class, Healable.class},
+                new Class[]{Playable.class},
                 new PlayableInvHadler(this));
     }
+
+
 
     private String name;
     private Float health;
@@ -44,7 +44,7 @@ public class Unit implements Playable {
         return new String("Unit " + getName() + " " + getHealth());
     }
 
-    @Cashe
+    @Cache
     public String getName() {
         return name;
     }
@@ -65,5 +65,10 @@ public class Unit implements Playable {
 
         if (health < 0 || health > 100) throw new IllegalArgumentException();
         this.health = health;
+    }
+
+    @Override
+    public void doTemp() {
+        System.out.println("dotemp");
     }
 }

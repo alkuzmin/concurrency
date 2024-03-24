@@ -1,5 +1,4 @@
 import t1.Playable;
-import t1.SimpleThread;
 import t1.Unit;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -26,7 +25,13 @@ public class Main {
 //        (new Thread(st3)).start();
 
         Unit t1 = new Unit("dfdf",14f);
-        Playable t1_cashed = (Playable)t1.getProxy();
+       Playable t1_cashed = (Playable)t1.getProxy();
+
+
+
+        t1_cashed.toString();
+        //t2_cashed.dotemp();
+
 
         System.out.println("before cashe");
         System.out.println(t1.getName());
