@@ -62,7 +62,23 @@ public class PlayableInvHadler implements InvocationHandler {
             }
         }
 
-        new CacheCleaner().start();
+
+        int good = 0, bad=0;
+        float badProp=0f;
+        for (Map<Method,Result> mr : states.values())
+        {
+            for (Result re : mr.values())
+            {
+                if (re.ttl<System.currentTimeMillis()) good++;
+                else bad++;
+            }
+
+        }
+        badProp = ((float)bad)/(bad+good);
+
+        if (badProp>0.6) {
+            new CacheCleaner().start();
+        }
         return method.invoke(obj, args);
 
 //        System.out.println("captured " + m.getName());
